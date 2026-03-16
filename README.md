@@ -217,3 +217,27 @@ The checklist:
 - [x] confirmed host access fails without published port
 - [x] ran container in detached mode
 - [x] inspected logs with `docker logs`
+
+--- 
+### Day 10 checklist (Dockerfile improvements, image hygiene, and first production-minded refinements)
+
+Today’s key messages are:
+- **A good container image is not just something that starts — it should also be clean, predictable, and suited for runtime use.**
+- A Dockerfile should not only work, but also be intentional and clean.
+- Python runtime environment variables like `PYTHONUNBUFFERED=1` improve log behavior in containers.
+- `.dockerignore` is part of both build performance and image hygiene.
+- A runtime container should avoid unnecessary local-development behavior such as automatic reload.
+- Cleaner images make later deployment and debugging easier.
+
+The checklist:
+
+- [x] updated Dockerfile with Python environment settings
+- [x] improved `.dockerignore`
+- [x] built image `devops-starter-api:day10`
+- [x] ran container on port `8000`
+- [x] tested `/`
+- [x] tested `/health`
+- [x] tested `/tasks`
+- [x] observed logs from the running container
+- [x] explained why `PYTHONUNBUFFERED=1` is useful
+- [x] explained why image hygiene matters

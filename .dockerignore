@@ -1,9 +1,11 @@
 .venv
 __pycache__
-.git
-.env
 *.pyc
+.git
 .gitignore
+.env
+README.md
+LICENSE
 .cursorignore
 .cursorindexingignore
 
