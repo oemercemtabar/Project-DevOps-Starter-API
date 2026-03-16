@@ -412,3 +412,26 @@ The checklist:
 - [x] explained why startup table creation is not enough for schema evolution
 - [x] understood why migrations exist
 - [x] understood why changing `CREATE TABLE IF NOT EXISTS` does not update an existing table
+
+---
+### Day 18 checklist (Docker Compose for development vs runtime)
+
+Today’s key messages are:
+- **A good container workflow often uses a clean base stack for runtime-like behavior and a separate override for development convenience such as bind mounts and live reload.**
+- A Compose stack can be optimized either for development speed or for cleaner runtime-like behavior.
+- A runtime-oriented stack usually avoids live reload and source bind mounts.
+- A development-oriented stack often uses bind mounts and `--reload` for faster iteration.
+- Compose override files are a clean way to add dev-only behavior without polluting the base stack.
+- Bind mounts improve speed for coding, but make the container depend more directly on host file state.
+
+The checklist:
+
+- [x] kept `docker-compose.yml` as the base runtime-style file
+- [x] created `docker-compose.dev.yml`
+- [x] started the stack with both Compose files
+- [x] enabled `--reload` for the API in dev mode
+- [x] mounted local source code into the API container
+- [x] edited code and observed live reload without rebuilding
+- [x] compared dev-style and runtime-style Compose behavior
+- [x] explained why bind mounts are useful in development
+- [x] explained why bind mounts reduce runtime reproducibility

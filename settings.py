@@ -5,6 +5,8 @@ class Settings(BaseSettings):
     app_env: str = "development"
     debug: bool = True
     database_url: str = "postgresql+psycopg://postgres:postgres@db:5432/devops_starter"
+    api_port: int = 8000
+    db_port: int = 5432
 
     model_config = SettingsConfigDict(
         env_file=".env",
