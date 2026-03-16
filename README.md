@@ -80,7 +80,7 @@ The checklist:
 ### Day 4 checklist (Environment variables, configuration, secrets basics)
 
 Today’s key messages are:
-- **the same code can behave differently depending on runtime configuration**
+- **The same code can behave differently depending on runtime configuration**
 - Configuration is how an application runs in a specific environment.
 - Hardcoding runtime values makes applications less flexible and less secure.
 - Environment variables allow runtime configuration without changing the code.
@@ -101,3 +101,27 @@ The checklist:
 - [x] created `.gitignore`
 - [x] created `.env.example`
 - [x] regenerated `requirements.txt`
+
+---
+### Day 5 checklist (Networking basics, localhost, DNS, reverse proxy concepts)
+
+Today’s key messages are:
+- **A service can be running correctly and still be unreachable if it is bound to the wrong interface or accessed through the wrong network path.**
+- A running app must not only exist as a process, but also listen on the correct host and port.
+- `127.0.0.1` means the loopback interface of the local machine.
+- `0.0.0.0` means the server listens on all available network interfaces.
+- `0.0.0.0` is mainly a binding address, not the normal address a client browses to.
+- DNS translates hostnames into IP addresses.
+- A reverse proxy sits in front of an application and forwards requests to it.
+
+The checklist:
+
+- [x] ran Uvicorn with `--host 127.0.0.1`
+- [x] tested access through `127.0.0.1`
+- [x] tested access through `localhost`
+- [x] ran Uvicorn with `--host 0.0.0.0`
+- [x] tested access again through `127.0.0.1`
+- [x] tested access again through `localhost`
+- [x] inspected the listening process with `lsof -i :8000`
+- [x] found the local machine IP
+- [x] wrote notes about DNS and reverse proxy concepts
