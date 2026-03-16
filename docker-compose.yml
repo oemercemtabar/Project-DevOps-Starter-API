@@ -4,6 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: devops-api
+    restart: unless-stopped
     ports:
       - "8000:8000"
     environment:
@@ -17,6 +18,7 @@ services:
   db:
     image: postgres:16
     container_name: devops-db
+    restart: unless-stopped
     environment:
       POSTGRES_DB: "devops_starter"
       POSTGRES_USER: "postgres"

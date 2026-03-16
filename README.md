@@ -265,3 +265,27 @@ The checklist:
 - [x] inspected services with `docker compose ps`
 - [x] stopped stack with `docker compose down`
 - [x] understood why `db` is used instead of `localhost`
+
+--- 
+### Day 12 checklist (Compose workflows, service lifecycle, volumes, and stack debugging)
+
+Today’s key messages are:
+- **A multi-service stack should be debugged service by service, with attention to lifecycle state, logs, networking, and persistent volumes.**
+- Operating a multi-service stack requires checking services individually, not as one undifferentiated system.
+- `docker compose ps` and `docker compose logs` are core debugging tools for Compose stacks.
+- `docker compose stop`, `docker compose down`, and `docker compose down -v` have very different effects.
+- Named volumes allow database data to persist across container recreation.
+- Service-specific logs help distinguish API problems from database problems.
+
+The checklist:
+
+- [x] started stack with `docker compose up -d --build`
+- [x] inspected services with `docker compose ps`
+- [x] inspected all logs with `docker compose logs`
+- [x] inspected API logs with `docker compose logs api`
+- [x] inspected DB logs with `docker compose logs db`
+- [x] followed API logs while sending requests
+- [x] inspected volumes with `docker volume ls`
+- [x] tested `docker compose stop` and `docker compose start`
+- [x] tested `docker compose down` and `docker compose up -d`
+- [x] understood the effect of `docker compose down -v`
