@@ -38,28 +38,22 @@ The checklist:
 ---
 
 ### Day 2 checklist (Day 2: Linux/processes/ports)
-Today’s messages are:
-- A process is running program on the machine.
-- A port is a logical network entry point (door) used by a process in the machine.
-- 127.0.0.1 means the local machine itself which can be also denoted as localhost (which transtlates to the same IP adress as 127.0.0.1)
-- Connection refused usually means no process is listening on that port.
-- Address already in use usually means another process is already listening on that port.
+
+Today’s key messages are:
+- A process is a running program on the machine.
+- A port is a logical network entry point (door) used by a process on the machine.
+- `127.0.0.1` means the local machine itself. It is often also referred to as `localhost`, which usually resolves to the same IP address.
+- “Connection refused” usually means no process is listening on that port.
+- “Address already in use” usually means another process is already listening on that port.
 
 The checklist:
 
 - [x] started app on port `8000`
-- [x] tested `\health`
+- [x] tested `/health`
 - [x] ran `lsof -i :8000`
 - [x] ran `ps aux | grep uvicorn`
 - [x] restarted app on port `8001`
 - [x] confirmed `8001` works
 - [x] confirmed `8000` no longer works
 - [x] tested both `localhost` and `127.0.0.1`
-
-
-
-
-
-
-
 ---
