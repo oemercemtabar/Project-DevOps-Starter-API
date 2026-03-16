@@ -125,3 +125,26 @@ The checklist:
 - [x] inspected the listening process with `lsof -i :8000`
 - [x] found the local machine IP
 - [x] wrote notes about DNS and reverse proxy concepts
+
+--- 
+
+### Day 6 checklist (Logs, debugging basics, failure analysis)
+
+Today’s key messages are:
+- Logs are one of the first sources of truth when debugging a system.
+- A request reaching the app does not necessarily mean the request succeeded.
+- Startup failures, network failures, validation failures, and runtime exceptions are different categories of problems.
+- A `500` usually means the server code crashed during request handling.
+- Framework logs and application logs provide different kinds of useful information.
+
+The checklist:
+
+- [x] observed normal startup logs
+- [x] observed request logs for successful requests
+- [x] observed `422` validation failure in logs
+- [x] observed `404` path failure in logs
+- [x] reproduced a syntax error and read the startup failure
+- [x] reproduced an import error and read the startup failure
+- [x] reproduced a runtime exception and observed a `500`
+- [x] added custom application logging
+- [x] observed custom logs from endpoints
