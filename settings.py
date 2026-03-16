@@ -4,6 +4,7 @@ class Settings(BaseSettings):
     app_name: str = "DevOps Starter API"
     app_env: str = "development"
     debug: bool = True
+    database_url: str = "postgresql://postgres:postgres@localhost:5432/devops_starter"
 
     model_config = SettingsConfigDict(
         env_file=".env",

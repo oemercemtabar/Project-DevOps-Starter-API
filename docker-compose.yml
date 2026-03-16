@@ -1,0 +1,30 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: devops-api
+    ports:
+      - "8000:8000"
+    environment:
+      APP_NAME: "DevOps Starter API - Compose"
+      APP_ENV: "docker-compose"
+      DEBUG: "false"
+      DATABASE_URL: "postgresql://postgres:postgres@db:5432/devops_starter"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16
+    container_name: devops-db
+    environment:
+      POSTGRES_DB: "devops_starter"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

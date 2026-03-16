@@ -25,7 +25,8 @@ def root():
     return {
         "message": f"{settings.app_name} is running!",
         "environment": settings.app_env,
-        "debug": settings.debug
+        "debug": settings.debug,
+        "database_url": settings.database_url
 
     }
 

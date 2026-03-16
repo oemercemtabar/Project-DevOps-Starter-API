@@ -241,3 +241,27 @@ The checklist:
 - [x] observed logs from the running container
 - [x] explained why `PYTHONUNBUFFERED=1` is useful
 - [x] explained why image hygiene matters
+
+--- 
+### Day 11 checklist (Docker Compose and multi-service local environments)
+
+Today’s key messages are:
+- **In Docker Compose, each service is its own containerized environment, and services usually communicate through the Compose network by service name, not by localhost.**
+- Real applications often need multiple services, not just one container.
+- Docker Compose defines and runs multi-container applications from a single file.
+- In Compose networking, services usually reach each other by service name.
+- Inside the API container, the database hostname should be `db`, not `localhost`.
+- Named volumes help persist database data across container recreation.
+
+The checklist:
+
+- [x] updated `settings.py` with `database_url`
+- [x] updated `main.py` to show `database_url`
+- [x] updated `.env.example`
+- [x] created `docker-compose.yml`
+- [x] ran `docker compose up --build`
+- [x] tested `/`
+- [x] tested `/health`
+- [x] inspected services with `docker compose ps`
+- [x] stopped stack with `docker compose down`
+- [x] understood why `db` is used instead of `localhost`
