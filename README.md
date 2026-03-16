@@ -353,14 +353,14 @@ Today’s key messages are:
 
 The checklist:
 
-- [ ] installed `sqlalchemy` and `psycopg[binary]`
-- [ ] updated `requirements.txt`
-- [ ] created `db.py`
-- [ ] updated `main.py` with `/health/db`
-- [ ] rebuilt stack with `docker compose up -d --build`
-- [ ] tested `/health`
-- [ ] tested `/health/db`
-- [ ] inspected API logs
-- [ ] inspected DB logs
-- [ ] verified `DATABASE_URL` inside the API container
-- [ ] observed failure when DB hostname was intentionally broken
+- [x] installed `sqlalchemy` and `psycopg[binary]`
+- [x] updated `requirements.txt`
+- [x] created `db.py`
+- [x] updated `main.py` with `/health/db`
+- [x] rebuilt stack with `docker compose up -d --build`
+- [x] tested `/health`
+- [x] tested `/health/db`
+- [x] inspected API logs
+- [x] inspected DB logs
+- [x] verified `DATABASE_URL` inside the API container
+- [x] observed failure when DB hostname was intentionally broken
