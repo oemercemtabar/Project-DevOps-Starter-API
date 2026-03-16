@@ -4,6 +4,8 @@ __pycache__
 .git
 .gitignore
 .env
+.env.compose.api
+.env.compose.db
 README.md
 LICENSE
 .cursorignore

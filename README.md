@@ -312,3 +312,30 @@ The checklist:
 - [x] entered the API container and checked environment variables
 - [x] explained why `localhost` is wrong between containers
 - [x] explained why service names work inside Compose
+
+---
+### Day 14 checklist (Compose environment files, overrides, and configuration strategy)
+
+Today’s key messages are:
+- **In a Compose stack, configuration should be understood by layer: app-level env loading, Compose service runtime env injection, and Compose YAML substitution are related but distinct mechanisms.**
+- Configuration in a Compose setup exists at multiple layers and should be kept conceptually separate.
+- The app’s local `.env` and a Compose service `env_file` are related, but they are not the same thing.
+- `env_file` injects environment variables into a service container at runtime.
+- `${VAR}` syntax in `docker-compose.yml` is Compose-side variable substitution, which is different from service runtime env injection.
+- Variables used in `${VAR}` must be available to Compose itself, not only inside a service `env_file`.
+- Cleaner configuration structure makes multi-service setups easier to reason about.
+
+The checklist:
+
+- [x] created `.env.compose.api`
+- [x] created `.env.compose.db`
+- [x] updated `docker-compose.yml` to use `env_file`
+- [x] created `.env.compose.api.example`
+- [x] added `.env.compose.api` to `.gitignore`
+- [x] added `.env.compose.api` to `.dockerignore`
+- [x] restarted stack with `docker compose up -d --build`
+- [x] tested `/`
+- [x] inspected API container environment variables
+- [x] explained app `.env` vs Compose `env_file`
+- [x] explained `env_file` vs `${VAR}` YAML substitution
+- [x] understood why `API_PORT` and `DB_PORT` should not come only from service `env_file` files

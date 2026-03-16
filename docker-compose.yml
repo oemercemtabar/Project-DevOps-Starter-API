@@ -7,11 +7,8 @@ services:
     restart: unless-stopped
     ports:
       - "8000:8000"
-    environment:
-      APP_NAME: "DevOps Starter API - Compose"
-      APP_ENV: "docker-compose"
-      DEBUG: "false"
-      DATABASE_URL: "postgresql://postgres:postgres@db:5432/devops_starter"
+    env_file:
+      - .env.compose.api
     depends_on:
       - db
 
@@ -19,10 +16,8 @@ services:
     image: postgres:16
     container_name: devops-db
     restart: unless-stopped
-    environment:
-      POSTGRES_DB: "devops_starter"
-      POSTGRES_USER: "postgres"
-      POSTGRES_PASSWORD: "postgres"
+    env_file:
+      - .env.compose.db
     ports:
       - "5432:5432"
     volumes:
