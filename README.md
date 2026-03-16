@@ -149,6 +149,8 @@ The checklist:
 - [x] added custom application logging
 - [x] observed custom logs from endpoints
 
+---
+
 ### Day 7 checklist (Introduction to containers and Docker)
 
 Today’s key messages are:
@@ -171,3 +173,25 @@ The checklist:
 - [x] inspected running container with `docker ps`
 - [x] ran container with alternate host port mapping
 
+--- 
+### Day 8 checklist (Docker images, layers, caching, and build behavior)
+
+Today’s key messages are:
+- Docker images are built step by step from Dockerfile instructions.
+- Image layers allow Docker to reuse previous build work through caching.
+- Dockerfile instruction order affects build speed and cache efficiency.
+- `COPY requirements.txt` before `COPY . .` helps avoid unnecessary dependency reinstalls.
+- `.dockerignore` reduces build context size and avoids copying unnecessary or sensitive files.
+
+The checklist:
+
+- [x] rebuilt image and observed cache behavior
+- [x] rebuilt image again without changes
+- [x] changed application code and observed selective rebuild
+- [x] explained why dependency copy order matters
+- [x] explained why `.dockerignore` matters
+- [x] ran `devops-starter-api:day8`
+- [x] verified the containerized app still works
+- [x] summarized what changed between the first and second rebuilds
+
+---

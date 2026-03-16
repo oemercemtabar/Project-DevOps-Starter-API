@@ -21,7 +21,7 @@ tasks = [
 
 @app.get("/")
 def root():
-    logger.info("Root endpoint accessed")
+    logger.info("Root endpoint accessed inside Docker build practice")
     return {
         "message": f"{settings.app_name} is running!",
         "environment": settings.app_env,
