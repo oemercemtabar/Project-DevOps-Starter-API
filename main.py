@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException, status
 from pydantic import BaseModel
 
 app = FastAPI(title="DevOps Starter API")
@@ -24,7 +24,7 @@ def health():
 def list_tasks():
     return {"tasks": tasks}
 
-@app.post("/tasks")
+@app.post("/tasks", status_code=status.HTTP_201_CREATED)
 def create_task(payload: TaskCreate):
     new_task = {
         "id": len(tasks) + 1,
@@ -40,5 +40,5 @@ def mark_task_done(task_id: int):
         if task["id"] == task_id:
             task["done"] = True
             return task
-    return {"error": "Task not found"}
+    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Task not found")
 

@@ -17,7 +17,7 @@ uvicorn main:app --reload
 ---
 ## RoadMap
 
-### Day 1 checklist (Day 1: DevOps mindset, app architecture, local environment)
+### Day 1 checklist (DevOps mindset, app architecture, local environment)
 Today’s key message is: **A service is not only code. A service is code + process + config + dependencies + runtime behavior.**
 
 The checklist:
@@ -37,7 +37,7 @@ The checklist:
 
 ---
 
-### Day 2 checklist (Day 2: Linux/processes/ports)
+### Day 2 checklist (Linux/processes/ports)
 
 Today’s key messages are:
 - A process is a running program on the machine.
@@ -56,4 +56,23 @@ The checklist:
 - [x] confirmed `8001` works
 - [x] confirmed `8000` no longer works
 - [x] tested both `localhost` and `127.0.0.1`
+
+---
+
+### Day 3 checklist (HTTP, APIs, curl, status codes)
+
+Today’s key message is:
+- **When debugging an API, always identify the method, path, payload, and resulting status code.**
+
+The checklist:
+
+- [x] updated `main.py` with better status handling
+- [x] tested `GET /health` with `curl -i`
+- [x] tested `GET /tasks` with `curl -i`
+- [x] tested valid `POST /tasks`
+- [x] tested invalid `POST /tasks`
+- [x] tested wrong path
+- [x] tested wrong method
+- [x] tested missing task update
+
 ---
