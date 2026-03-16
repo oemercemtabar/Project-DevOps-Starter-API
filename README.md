@@ -577,3 +577,26 @@ The checklist:
 - [x] inspected environment variables from inside the container
 - [x] inspected DB health details with `docker inspect`
 - [x] explained when to use logs vs inspect vs exec
+
+--- 
+### Day 25 checklist (Compose commands, overrides, and config definition vs runtime state)
+
+Today’s key messages are:
+- **In Compose debugging, you must distinguish between the intended merged configuration and the actual current runtime state of the containers.**
+- Compose configuration and runtime container state are related but not identical.
+- `docker compose config` shows the fully resolved Compose configuration.
+- Override files change the final configuration and should be inspected through the merged config output.
+- A changed Compose file does not automatically mean existing containers reflect the new config until they are recreated.
+- Good Compose debugging checks both the merged config and the actual running container state.
+
+The checklist:
+
+- [x] inspected the base Compose configuration with `docker compose config`
+- [x] inspected the merged base + dev override configuration
+- [x] compared the `api` service between base and dev config
+- [x] started the dev stack with both Compose files
+- [x] inspected runtime service state with `docker compose ps`
+- [x] inspected mounts with `docker inspect`
+- [x] inspected environment variables with `docker inspect`
+- [x] explained config definition vs runtime state
+- [x] explained why override files can change debugging expectations
