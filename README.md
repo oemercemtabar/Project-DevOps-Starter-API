@@ -148,3 +148,26 @@ The checklist:
 - [x] reproduced a runtime exception and observed a `500`
 - [x] added custom application logging
 - [x] observed custom logs from endpoints
+
+### Day 7 checklist (Introduction to containers and Docker)
+
+Today’s key messages are:
+- **A Docker image defines how the app should run; a container is the running process environment created from that definition.**
+- Docker packages an application and its runtime into a reproducible image.
+- An image is a build artifact; a container is a running instance of that image.
+- A container is still an isolated process environment.
+- The application inside the container must listen on `0.0.0.0` to be reachable through published ports.
+- Port publishing with `-p host_port:container_port` maps a host port to a container port.
+
+
+The checklist:
+- [x] created `Dockerfile`
+- [x] created `.dockerignore`
+- [x] built image `devops-starter-api:day7`
+- [x] ran container on port `8000`
+- [x] tested `/`
+- [x] tested `/health`
+- [x] tested `/tasks`
+- [x] inspected running container with `docker ps`
+- [x] ran container with alternate host port mapping
+
