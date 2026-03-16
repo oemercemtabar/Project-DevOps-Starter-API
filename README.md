@@ -461,3 +461,25 @@ The checklist:
 - [x] explained profiles vs override files
 
 ---
+
+### Day 20 checklist (Compose healthchecks, readiness, and dependency reliability)
+
+Today’s key messages are:
+- **A container can be running before its service is truly ready, and healthchecks help make that readiness state visible.**
+- A running container is not always the same as a ready service.
+- Healthchecks give Docker a more meaningful way to evaluate service health.
+- PostgreSQL can be running before it is ready to accept connections.
+- Healthchecks improve observability and debugging in multi-service stacks.
+- Readiness visibility helps, but it does not automatically remove all dependency timing issues.
+
+The checklist:
+
+- [x] added a PostgreSQL healthcheck to `docker-compose.yml`
+- [x] restarted the stack with `docker compose up -d --build`
+- [x] inspected service state with `docker compose ps`
+- [x] inspected DB health details with `docker inspect`
+- [x] tested `/health/db` during startup
+- [x] tested `/health/db` after waiting for readiness
+- [x] explained running vs ready
+- [x] explained why healthchecks matter
+- [x] explained why healthchecks help but do not solve everything automatically
