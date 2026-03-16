@@ -3,6 +3,7 @@ import logging
 from fastapi import FastAPI, HTTPException, status
 from pydantic import BaseModel
 
+from db import check_database_connection
 from settings import settings
 
 logging.basicConfig(level=logging.INFO)
@@ -36,6 +37,23 @@ def health():
     return {
         "status": "ok",
         "environment": settings.app_env
+    }
+
+@app.get("/health/db")
+def health_db():
+    logger.info("Database health check endpoint accessed")
+    db_status = check_database_connection()
+
+    if not db_status["ok"]:
+        logger.warning("Database health check failed: %s", db_status["error"])
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail=db_status["error"],
+        )
+
+    return {
+        "status": "ok",
+        "database": db_status,
     }
 
 @app.get("/tasks")

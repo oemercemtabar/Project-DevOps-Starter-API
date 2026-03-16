@@ -339,3 +339,28 @@ The checklist:
 - [x] explained app `.env` vs Compose `env_file`
 - [x] explained `env_file` vs `${VAR}` YAML substitution
 - [x] understood why `API_PORT` and `DB_PORT` should not come only from service `env_file` files
+
+--- 
+### Day 15 checklist (First real database integration with PostgreSQL in Compose)
+
+Today’s key messages are:
+- **A dependency is not truly healthy just because its container is running — the application must be able to connect to it and perform a real operation.**
+- A running DB container and a configured DB URL do not prove the API can actually query the database.
+- A real dependency check requires the application to establish a connection and execute a query.
+- `/health` and `/health/db` can represent different levels of system health.
+- In Compose, the correct database hostname for the API is the DB service name, such as `db`.
+- `depends_on` helps startup ordering, but does not guarantee database readiness.
+
+The checklist:
+
+- [ ] installed `sqlalchemy` and `psycopg[binary]`
+- [ ] updated `requirements.txt`
+- [ ] created `db.py`
+- [ ] updated `main.py` with `/health/db`
+- [ ] rebuilt stack with `docker compose up -d --build`
+- [ ] tested `/health`
+- [ ] tested `/health/db`
+- [ ] inspected API logs
+- [ ] inspected DB logs
+- [ ] verified `DATABASE_URL` inside the API container
+- [ ] observed failure when DB hostname was intentionally broken
