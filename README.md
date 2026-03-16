@@ -76,3 +76,28 @@ The checklist:
 - [x] tested missing task update
 
 ---
+
+### Day 4 checklist (Environment variables, configuration, secrets basics)
+
+Today’s key messages are:
+- **the same code can behave differently depending on runtime configuration**
+- Configuration is how an application runs in a specific environment.
+- Hardcoding runtime values makes applications less flexible and less secure.
+- Environment variables allow runtime configuration without changing the code.
+- `.env` files are useful for local development.
+- Secrets are sensitive configuration values and should not be committed to Git.
+- `.env.example` documents expected variables safely.
+
+The checklist:
+
+- [x] installed `pydantic-settings`
+- [x] created `settings.py`
+- [x] updated `main.py` to use settings
+- [x] created `.env`
+- [x] tested config values through `/`
+- [x] tested config values through `/health`
+- [x] changed `.env` values and verified runtime change
+- [x] tested shell-based env var override
+- [x] created `.gitignore`
+- [x] created `.env.example`
+- [x] regenerated `requirements.txt`

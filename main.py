@@ -1,7 +1,9 @@
 from fastapi import FastAPI, HTTPException, status
 from pydantic import BaseModel
 
-app = FastAPI(title="DevOps Starter API")
+from settings import settings
+
+app = FastAPI(title=settings.app_name)
 
 class TaskCreate(BaseModel):
     title: str
@@ -14,11 +16,19 @@ tasks = [
 
 @app.get("/")
 def root():
-    return {"message": "DevOps Starter API is running!"}
+    return {
+        "message": f"{settings.app_name} is running!",
+        "environment": settings.app_env,
+        "debug": settings.debug
+
+    }
 
 @app.get("/health")
 def health():
-    return {"status": "ok"}
+    return {
+        "status": "ok",
+        "environment": settings.app_env
+    }
 
 @app.get("/tasks")
 def list_tasks():
