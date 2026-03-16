@@ -390,3 +390,25 @@ The checklist:
 - [x] restarted the stack without removing volumes
 - [x] verified task data still existed after restart
 - [x] optionally inspected the `tasks` table directly in PostgreSQL
+
+---
+
+### Day 17 checklist (Database schema lifecycle, startup risks, and why migrations exist)
+
+Today’s key messages are:
+- **Bootstrapping a database and evolving a database schema are not the same task — schema evolution requires explicit, controlled changes, which is why migrations exist.**
+- A database schema defines the structure of tables, columns, and constraints, while data is the content stored inside that structure.
+- `CREATE TABLE IF NOT EXISTS` is useful for first-time bootstrap, but it does not evolve an already existing table.
+- Changing schema definition code is not the same as migrating an existing database.
+- Real projects use migrations to apply schema changes in a controlled, versioned way.
+- Application startup logic and database schema lifecycle management are related but distinct responsibilities.
+
+The checklist:
+
+- [x] inspected the `tasks` table schema with `psql`
+- [x] inspected stored task data with `SELECT * FROM tasks`
+- [x] explained schema vs data
+- [x] explained why startup table creation is useful for bootstrap
+- [x] explained why startup table creation is not enough for schema evolution
+- [x] understood why migrations exist
+- [x] understood why changing `CREATE TABLE IF NOT EXISTS` does not update an existing table
