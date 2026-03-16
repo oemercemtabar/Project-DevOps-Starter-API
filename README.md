@@ -553,3 +553,27 @@ The checklist:
 - [x] compared project-specific cleanup with global cleanup
 - [x] understood why deleting images is not the same as deleting volumes
 - [x] understood why deleting volumes can erase database persistence
+
+---
+### Day 24 checklist (Docker logs, inspect, exec, and practical debugging workflow)
+
+Today’s key messages are:
+- **Effective Docker debugging comes from checking state, logs, configuration, and in-container reality in a deliberate order, not from guessing.**
+- Good container debugging starts with state and logs before changing code.
+- `docker logs` shows what the container process wrote during startup and runtime.
+- `docker inspect` shows structured information about container state, environment, ports, mounts, and health.
+- `docker exec` lets you inspect the running container from the inside.
+- A strong debugging workflow uses state, logs, inspect output, and in-container verification together.
+
+The checklist:
+
+- [x] inspected service state with `docker compose ps`
+- [x] inspected API logs with `docker compose logs`
+- [x] inspected container state with `docker inspect`
+- [x] inspected environment variables with `docker inspect`
+- [x] inspected port mappings with `docker inspect`
+- [x] inspected mounts with `docker inspect`
+- [x] entered the API container with `docker exec`
+- [x] inspected environment variables from inside the container
+- [x] inspected DB health details with `docker inspect`
+- [x] explained when to use logs vs inspect vs exec
