@@ -507,3 +507,26 @@ The checklist:
 - [x] restored the API and confirmed recovery
 - [x] compared crash behavior with explicit `docker compose stop`
 - [x] explained restart policy vs actual service health
+
+---
+### Day 22 checklist (Images vs containers vs volumes vs networks)
+
+Today’s key messages are:
+- **Images define how containers are created, containers run processes, volumes preserve data across container lifetimes, and networks let those containers communicate.**
+- An image is a packaged blueprint, while a container is a running instance created from that image.
+- A volume is persistent storage that can survive container recreation.
+- A network allows containers to communicate and resolve each other by service name.
+- `docker compose down` usually removes containers and networks, but not named volumes.
+- `docker compose down -v` also removes named volumes, which can erase persisted database data.
+
+The checklist:
+
+- [x] inspected images with `docker images`
+- [x] inspected containers with `docker ps -a`
+- [x] inspected volumes with `docker volume ls`
+- [x] inspected networks with `docker network ls`
+- [x] identified the image/container/volume/network objects in the project
+- [x] created a task and verified it persisted after `docker compose down` and `up`
+- [x] understood why the DB volume preserved data
+- [x] understood why data would be lost after `docker compose down -v`
+- [x] explained image vs container vs volume vs network
