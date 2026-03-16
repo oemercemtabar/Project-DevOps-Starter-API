@@ -289,3 +289,26 @@ The checklist:
 - [x] tested `docker compose stop` and `docker compose start`
 - [x] tested `docker compose down` and `docker compose up -d`
 - [x] understood the effect of `docker compose down -v`
+
+---
+### Day 13 checklist (Compose networking, service names, and why localhost breaks between containers)
+
+Today’s key messages are:
+- **In a Compose stack, containers talk to each other through the internal Compose network by service name, while localhost only refers to the current container itself.**
+- In Docker Compose, each service runs in its own containerized environment.
+- Inside a container, `localhost` means that same container, not another service.
+- Services in the same Compose network usually reach each other by service name.
+- The API should use `db:5432` to reach PostgreSQL, not `localhost:5432`.
+- Host access and container-to-container access are different network paths.
+
+The checklist:
+
+- [x] confirmed `DATABASE_URL` uses `db:5432`
+- [x] started stack with `docker compose up -d --build`
+- [x] tested `/` and verified DB URL in the API response
+- [x] inspected services with `docker compose ps`
+- [x] inspected Compose networks with `docker network ls`
+- [x] inspected the project network with `docker network inspect`
+- [x] entered the API container and checked environment variables
+- [x] explained why `localhost` is wrong between containers
+- [x] explained why service names work inside Compose
