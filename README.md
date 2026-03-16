@@ -16,19 +16,11 @@ uvicorn main:app --reload
 
 ---
 ## RoadMap
-### One important mental model to keep
 
-Today’s key message is:
+### Day 1 checklist (Day 1: DevOps mindset, app architecture, local environment)
+Today’s key message is: **A service is not only code. A service is code + process + config + dependencies + runtime behavior.**
 
-**A service is not only code. A service is code + process + config + dependencies + runtime behavior.**
-
-That sentence will become more and more important with Docker, Kubernetes, Helm, and Terraform.
-
----
-
-### Day 1 checklist
-
-Use this checklist:
+The checklist:
 
 - [x] created `devops-starter-api`
 - [x] created and activated `.venv`
@@ -42,5 +34,32 @@ Use this checklist:
 - [x] tested `PATCH /tasks/{id}/done`
 - [x] generated `requirements.txt`
 - [x] wrote basic `README.md`
+
+---
+
+### Day 2 checklist (Day 2: Linux/processes/ports)
+Today’s messages are:
+- A process is running program on the machine.
+- A port is a logical network entry point (door) used by a process in the machine.
+- 127.0.0.1 means the local machine itself which can be also denoted as localhost (which transtlates to the same IP adress as 127.0.0.1)
+- Connection refused usually means no process is listening on that port.
+- Address already in use usually means another process is already listening on that port.
+
+The checklist:
+
+- [x] started app on port `8000`
+- [x] tested `\health`
+- [x] ran `lsof -i :8000`
+- [x] ran `ps aux | grep uvicorn`
+- [x] restarted app on port `8001`
+- [x] confirmed `8001` works
+- [x] confirmed `8000` no longer works
+- [x] tested both `localhost` and `127.0.0.1`
+
+
+
+
+
+
 
 ---
