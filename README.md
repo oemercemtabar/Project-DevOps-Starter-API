@@ -195,3 +195,25 @@ The checklist:
 - [x] summarized what changed between the first and second rebuilds
 
 ---
+
+### Day 9 checklist (Container networking and ports in practice)
+
+Today’s key messages are:
+- A running container is not automatically reachable from the host.
+- The application inside the container listens on a container port.
+- Docker publishes that port to the host with `-p host_port:container_port`.
+- `EXPOSE` documents the intended container port, but does not publish it to the host.
+- Correct app binding inside the container and correct port publishing are both required for reachability.
+
+The checklist:
+
+- [x] ran container with `-p 8000:8000`
+- [x] tested `/health` on host port `8000`
+- [x] ran container with `-p 8001:8000`
+- [x] tested `/health` on host port `8001`
+- [x] confirmed wrong host port fails
+- [x] inspected `docker ps` port mappings
+- [x] ran container without `-p`
+- [x] confirmed host access fails without published port
+- [x] ran container in detached mode
+- [x] inspected logs with `docker logs`
