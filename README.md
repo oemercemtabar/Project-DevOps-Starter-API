@@ -530,3 +530,26 @@ The checklist:
 - [x] understood why the DB volume preserved data
 - [x] understood why data would be lost after `docker compose down -v`
 - [x] explained image vs container vs volume vs network
+
+---
+### Day 23 checklist (Docker cleanup, disk usage, pruning, and safe resource management)
+
+Today’s key messages are:
+- **Good Docker cleanup is about understanding which resource type you are deleting and whether that deletion affects only runtime state, reusable artifacts, or persistent data.**
+- Docker stores different types of resources: images, containers, volumes, networks, and build cache.
+- Cleanup should be intentional, because different resource types have different consequences when deleted.
+- `docker system df` is a good first step to inspect Docker disk usage before deleting anything.
+- Targeted prune commands are often safer than aggressive global cleanup.
+- Deleting images is not the same as deleting volumes, and deleting volumes can erase persisted database data.
+
+The checklist:
+
+- [x] inspected Docker disk usage with `docker system df`
+- [x] inspected images with `docker images`
+- [x] inspected containers with `docker ps -a`
+- [x] inspected volumes with `docker volume ls`
+- [x] inspected networks with `docker network ls`
+- [x] ran one or more targeted prune commands
+- [x] compared project-specific cleanup with global cleanup
+- [x] understood why deleting images is not the same as deleting volumes
+- [x] understood why deleting volumes can erase database persistence
