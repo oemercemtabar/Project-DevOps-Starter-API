@@ -364,3 +364,29 @@ The checklist:
 - [x] inspected DB logs
 - [x] verified `DATABASE_URL` inside the API container
 - [x] observed failure when DB hostname was intentionally broken
+
+---
+
+### Day 16 checklist (Persisting real data with PostgreSQL from the API)
+
+Today’s key messages are:
+- **A database-backed application is fundamentally different from an in-memory application because its state can survive process restarts and be retrieved later.**
+- In-memory application state disappears when the process restarts, but persisted database state can survive restarts.
+- A real database-backed API should insert, read, and update rows in PostgreSQL rather than only modifying Python memory.
+- Application startup can be used to perform simple schema initialization in a learning project.
+- `/health/db` proves connectivity, while task endpoints prove meaningful persistence behavior.
+- Docker volumes are what allow PostgreSQL data to survive container recreation.
+
+The checklist:
+
+- [x] replaced in-memory task storage with PostgreSQL-backed queries
+- [x] updated `db.py` with table initialization and task queries
+- [x] updated `main.py` to use DB-backed task operations
+- [x] rebuilt stack with `docker compose up -d --build`
+- [x] tested `/health/db`
+- [x] created a task in PostgreSQL
+- [x] listed tasks from PostgreSQL
+- [x] marked a task as done in PostgreSQL
+- [x] restarted the stack without removing volumes
+- [x] verified task data still existed after restart
+- [x] optionally inspected the `tasks` table directly in PostgreSQL
