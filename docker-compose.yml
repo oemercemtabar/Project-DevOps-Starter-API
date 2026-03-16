@@ -23,5 +23,14 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
+  adminer:
+    image: adminer
+    container_name: devops-adminer
+    restart: unless-stopped
+    profiles:
+      - tools
+    ports:
+      - "8080:8080"
+
 volumes:
   postgres_data:

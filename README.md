@@ -435,3 +435,29 @@ The checklist:
 - [x] compared dev-style and runtime-style Compose behavior
 - [x] explained why bind mounts are useful in development
 - [x] explained why bind mounts reduce runtime reproducibility
+
+---
+### Day 19 checklist (Compose profiles, optional services, and cleaner stack organization)
+
+Today’s key messages are:
+- **A clean Compose stack separates core services from optional helper services, and profiles are a good way to enable those extras only when needed.**
+- As stacks grow, not every service needs to run by default.
+- Compose profiles let optional services be enabled only when needed.
+- Profiles are useful for tools, admin UIs, and other non-core services.
+- Adminer is a good example of a service that is useful sometimes but not required for the core application.
+- Profiles and Compose override files solve different problems: profiles control optional services, while override files change service behavior.
+
+The checklist:
+
+- [x] added `adminer` as a Compose service
+- [x] assigned `adminer` to the `tools` profile
+- [x] ran the default stack and confirmed `adminer` was not started
+- [x] ran the stack with `--profile tools`
+- [x] confirmed `adminer` was started
+- [x] accessed Adminer in the browser
+- [x] connected Adminer to PostgreSQL using `db` as the server
+- [x] explained what a profile is
+- [x] explained why Adminer is a good optional service
+- [x] explained profiles vs override files
+
+---
