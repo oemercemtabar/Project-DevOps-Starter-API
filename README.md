@@ -483,3 +483,27 @@ The checklist:
 - [x] explained running vs ready
 - [x] explained why healthchecks matter
 - [x] explained why healthchecks help but do not solve everything automatically
+
+---
+### Day 21 checklist (Compose restart policies, failure behavior, and service resilience basics)
+
+Today’s key messages are:
+- **Compose restart policies, failure behavior, and service resilience basics**
+- Restart policies control how Docker reacts when a container stops.
+- A restarted service is not necessarily a healthy service.
+- Restart loops can happen when a service keeps crashing and Docker keeps trying to bring it back.
+- Restart count, logs, and health state together give a better picture than container state alone.
+- Explicitly stopping a service is different from the service crashing unexpectedly.
+
+The checklist:
+
+- [x] ensured `restart: unless-stopped` was present in `docker-compose.yml`
+- [x] started the stack cleanly
+- [x] inspected service state with `docker compose ps`
+- [x] inspected API restart state with `docker inspect`
+- [x] simulated an API startup failure
+- [x] observed logs during restart behavior
+- [x] observed restart count increasing during failure
+- [x] restored the API and confirmed recovery
+- [x] compared crash behavior with explicit `docker compose stop`
+- [x] explained restart policy vs actual service health
