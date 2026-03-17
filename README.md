@@ -600,3 +600,26 @@ The checklist:
 - [x] inspected environment variables with `docker inspect`
 - [x] explained config definition vs runtime state
 - [x] explained why override files can change debugging expectations
+
+--- 
+
+### Kubernetes Day 1 checklist (Introduction: cluster, node, pod, deployment, service)
+
+Today’s key messages are:
+- **Kubernetes is a declarative orchestration system that manages pods across a cluster and works to keep the application in the desired state.**
+- Docker packages and runs containers, while Kubernetes manages containerized workloads declaratively.
+- A cluster is the overall Kubernetes environment.
+- A node is one machine inside the cluster.
+- A pod is the smallest deployable unit in Kubernetes.
+- A Deployment manages the desired set of pod replicas.
+- A Service provides stable network access to a set of pods.
+
+The checklist:
+
+- [x] explained what problem Kubernetes solves beyond Docker
+- [x] explained cluster vs node
+- [x] explained pod vs container
+- [x] explained what a Deployment does
+- [x] explained what a Service does
+- [x] mapped the FastAPI app from Docker concepts into Kubernetes concepts
+- [x] explained desired state vs manually running containers
