@@ -623,3 +623,27 @@ The checklist:
 - [x] explained what a Service does
 - [x] mapped the FastAPI app from Docker concepts into Kubernetes concepts
 - [x] explained desired state vs manually running containers
+
+---
+
+### Kubernetes Day 2 checklist (Local cluster setup and first kubectl workflow)
+
+Today’s key messages are:
+- **Before deploying applications to Kubernetes, you need to verify the cluster, context, nodes, and namespaces so you know what system you are actually operating.**
+- `kubectl` is the main CLI for interacting with a Kubernetes cluster.
+- A local cluster can be created for learning with tools such as kind.
+- `kubectl get nodes` makes the node concept visible in a real cluster.
+- Namespaces organize resources inside the cluster.
+- `kubectl get pods -A` shows that Kubernetes itself runs system workloads before our app is deployed.
+
+The checklist:
+
+- [x] verified Docker was running
+- [x] checked `kubectl` installation
+- [x] checked `kind` installation
+- [x] created a local cluster with kind
+- [x] verified cluster access with `kubectl cluster-info`
+- [x] listed nodes with `kubectl get nodes`
+- [x] listed namespaces with `kubectl get ns`
+- [x] listed all pods with `kubectl get pods -A`
+- [x] checked the current kubectl context
